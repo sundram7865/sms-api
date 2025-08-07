@@ -62,7 +62,7 @@ PORT=5000
 ```
 
 ---
-
+Note: This API is hosted on Render’s free tier. The first request may take a few seconds to load as the server wakes up.
 ## 🧪 API Endpoints
  deployed on render -https://sms-api-mj6k.onrender.com
 ### 1. 📍 Get Schools Sorted by Distance
