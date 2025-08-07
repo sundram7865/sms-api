@@ -1,7 +1,9 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
+
 import './config/db.js';
+import schoolRoutes from './routes/schoolRoutes.js';
 dotenv.config();
 const app = express();
 
