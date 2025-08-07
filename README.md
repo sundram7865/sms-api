@@ -64,9 +64,9 @@ PORT=5000
 ---
 
 ## 🧪 API Endpoints
-
+ deployed on render -https://sms-api-mj6k.onrender.com
 ### 1. 📍 Get Schools Sorted by Distance
-
+   
 **GET** `/api/listSchools?latitude=XX.XXXX&longitude=YY.YYYY`
 
 - Returns all schools sorted by proximity to provided coordinates.
@@ -94,11 +94,7 @@ PORT=5000
 
 ---
 
-## 🧾 License
 
-This project is licensed under the [MIT License](LICENSE).
-
----
 
 ## 🙌 Acknowledgements
 
