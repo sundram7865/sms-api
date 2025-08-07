@@ -14,6 +14,7 @@ app.get('/',(req,res)=>{
         message:"Welcome to School Management System API"
     })
 })
+app.use('/api', schoolRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
