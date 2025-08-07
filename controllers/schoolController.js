@@ -14,3 +14,28 @@ export const addSchool = (req, res) => {
     res.status(201).json({ message: "✅ School added successfully!", id: result.insertId });
   });
 };
+
+export const listSchools = (req, res) => {
+  const { latitude, longitude } = req.query;
+
+  if (!latitude || !longitude) {
+    return res.status(400).json({ error: "Latitude and longitude are required." });
+  }
+
+  const sql = "SELECT * FROM schools";
+  db.query(sql, (err, schools) => {
+    if (err) return res.status(500).json({ error: err.message });
+
+    const sorted = schools.map((school) => {
+      const distance = getDistanceFromLatLonInKm(
+        parseFloat(latitude),
+        parseFloat(longitude),
+        school.latitude,
+        school.longitude
+      );
+      return { ...school, distance: distance.toFixed(2) };
+    }).sort((a, b) => a.distance - b.distance);
+
+    res.status(200).json({ schools: sorted });
+  });
+};
